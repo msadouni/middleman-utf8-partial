@@ -1,9 +1,3 @@
 require "middleman-utf8-partial/version"
+require "middleman-utf8-partial/utf8_partial"
 
-module Middleman
-  module Utf8
-    module Partial
-      # Your code goes here...
-    end
-  end
-end
