@@ -1,6 +1,18 @@
 # Middleman::Utf8::Partial
 
-TODO: Write a gem description
+Allows the usage of utf-8 encoded Markdown partials.
+
+## Why
+
+[An issue in Tilt](https://github.com/rtomayko/tilt/issues/75) prevents the usage of Markdown partials encoded in utf-8.
+
+[This Stackoverflow thread](http://stackoverflow.com/questions/10341550/incompatible-character-encoding-in-simple-sinatra-app) provides a workaround by force-encoding the output of the partial.
+
+This gem overrides the `partial` helper method in Middleman to force-encode the result in utf-8, allowing to call it as if it worked out of the box :
+
+    .article= partial 'article'
+
+where `source/_article.md` is an utf-8 encoded Markdown file.
 
 ## Installation
 
@@ -18,7 +30,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Activate the gem in `config.rb` :
+
+    activate :utf8_partial
 
 ## Contributing
 
@@ -27,3 +41,4 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
